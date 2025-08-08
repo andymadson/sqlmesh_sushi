@@ -1,0 +1,162 @@
+2025-08-08 14:37:34,412 - MainThread - sqlmesh.core.config.connection - INFO - Creating new DuckDB adapter for data files: {'db/sushi-example.db'} (connection.py:481)
+2025-08-08 14:37:34,950 - MainThread - sqlmesh.core.config.connection - INFO - Creating new DuckDB adapter for in-memory database (connection.py:483)
+2025-08-08 14:37:34,951 - MainThread - sqlmesh.core.config.connection - INFO - Creating new DuckDB adapter for in-memory database (connection.py:483)
+2025-08-08 14:37:35,031 - MainThread - sqlmesh.core.config.connection - INFO - Using existing DuckDB adapter due to overlapping data file: db/sushi-example.db (connection.py:471)
+2025-08-08 14:37:39,646 - MainThread - sqlmesh.core.plan.evaluator - INFO - Evaluating plan stage CreateSnapshotRecordsStage (evaluator.py:125)
+2025-08-08 14:37:39,666 - MainThread - sqlmesh.core.plan.evaluator - INFO - Evaluating plan stage PhysicalLayerUpdateStage (evaluator.py:125)
+2025-08-08 14:37:39,668 - MainThread - sqlmesh.core.snapshot.evaluator - INFO - Listing data objects in schema "sushi-example".sqlmesh__sushimoderate (evaluator.py:361)
+2025-08-08 14:37:39,668 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ SELECT CURRENT_CATALOG() (base.py:2260)
+2025-08-08 14:37:39,669 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ SELECT CURRENT_CATALOG() (base.py:2260)
+2025-08-08 14:37:39,669 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ SELECT table_name AS name, table_schema AS schema, CASE table_type WHEN 'BASE TABLE' THEN 'table' WHEN 'VIEW' THEN 'view' WHEN 'LOCAL TEMPORARY' THEN 'table' END AS type FROM system.information_schema.tables WHERE (table_catalog = 'sushi-example' AND table_schema = 'sqlmesh__sushimoderate') AND table_name IN ('sushimoderate__customer_segments__1267466178', 'sushimoderate__customer_lifetime_value__1687617668', 'sushimoderate__orders__2914195010', 'sushimoderate__order_items__4050422953', 'sushimoderate__customer_revenue_lifetime__1390750626', 'sushimoderate__top_waiters__3569809579', 'sushimoderate__waiter_names__1494776325', 'sushimoderate__items__1305987177', 'sushimoderate__customers__1405437590', 'sushimoderate__customer_revenue_by_day__1770424383', 'sushimoderate__waiter_revenue_by_day__3677256476') (base.py:2260)
+2025-08-08 14:37:39,682 - MainThread - sqlmesh.core.snapshot.evaluator - INFO - Creating schema '"sushi-example".sqlmesh__sushimoderate' (evaluator.py:1176)
+2025-08-08 14:37:39,683 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ CREATE SCHEMA IF NOT EXISTS "sushi-example"."sqlmesh__sushimoderate" (base.py:2260)
+2025-08-08 14:37:39,683 - MainThread - sqlmesh.core.snapshot.evaluator - INFO - Creating table '"sushi-example".sqlmesh__sushimoderate.sushimoderate__customer_segments__1267466178' (evaluator.py:1538)
+2025-08-08 14:37:39,684 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ SELECT CURRENT_CATALOG() (base.py:2260)
+2025-08-08 14:37:39,684 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ SELECT type FROM DUCKDB_DATABASES() WHERE database_name = 'sushi-example' (base.py:2260)
+2025-08-08 14:37:39,685 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ CREATE TABLE IF NOT EXISTS "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__customer_segments__1267466178" ("customer_id" INT, "lifetime_value" DOUBLE, "historical_revenue" DOUBLE, "active_months" BIGINT, "tenure_days" INT, "cluster" INT, "segment" TEXT) (base.py:2260)
+2025-08-08 14:37:39,689 - MainThread - sqlmesh.core.snapshot.evaluator - INFO - Creating table '"sushi-example".sqlmesh__sushimoderate.sushimoderate__waiter_names__1494776325' (evaluator.py:1538)
+2025-08-08 14:37:39,689 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ SELECT CURRENT_CATALOG() (base.py:2260)
+2025-08-08 14:37:39,690 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ SELECT type FROM DUCKDB_DATABASES() WHERE database_name = 'sushi-example' (base.py:2260)
+2025-08-08 14:37:39,690 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ CREATE TABLE IF NOT EXISTS "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__waiter_names__1494776325" ("id" INT, "name" TEXT) (base.py:2260)
+2025-08-08 14:37:39,693 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ COMMENT ON TABLE "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__waiter_names__1494776325" IS 'Seed data containing water names.' (base.py:2260)
+2025-08-08 14:37:39,701 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ SELECT CURRENT_CATALOG() (base.py:2260)
+2025-08-08 14:37:39,702 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ SELECT type FROM DUCKDB_DATABASES() WHERE database_name = 'sushi-example' (base.py:2260)
+2025-08-08 14:37:39,703 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ CREATE OR REPLACE TABLE "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__waiter_names__1494776325" AS SELECT CAST("id" AS INT) AS "id", CAST("name" AS TEXT) AS "name" FROM (SELECT "id", "name" FROM "sushi-example"."sqlmesh__sushimoderate"."__temp_sushimoderate__waiter_names__1494776325_9z3x1v3s") AS "_subquery" (base.py:2260)
+2025-08-08 14:37:39,705 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ DROP TABLE IF EXISTS "sushi-example"."sqlmesh__sushimoderate"."__temp_sushimoderate__waiter_names__1494776325_9z3x1v3s" (base.py:2260)
+2025-08-08 14:37:39,708 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ COMMENT ON TABLE "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__waiter_names__1494776325" IS 'Seed data containing water names.' (base.py:2260)
+2025-08-08 14:37:39,712 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ DESCRIBE "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579" (base.py:2260)
+2025-08-08 14:37:39,713 - MainThread - sqlmesh.core.snapshot.evaluator - INFO - Creating view '"sushi-example".sqlmesh__sushimoderate.sushimoderate__top_waiters__3569809579' (evaluator.py:1979)
+2025-08-08 14:37:39,719 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ CREATE VIEW "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579" AS SELECT CAST("r"."waiter_id" AS INT) AS "waiter_id", CAST("n"."name" AS TEXT) AS "waiter_name", CAST("r"."revenue" AS DOUBLE) AS "revenue" FROM "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__waiter_revenue_by_day__3677256476" AS "r" LEFT JOIN "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__waiter_names__1494776325" AS "n" ON "n"."id" = "r"."waiter_id" WHERE "r"."ds" = (SELECT MAX("waiter_revenue_by_day"."ds") AS "_col_0" FROM "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__waiter_revenue_by_day__3677256476" AS "waiter_revenue_by_day") ORDER BY "revenue" DESC LIMIT 10 (base.py:2260)
+2025-08-08 14:37:39,722 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ COMMENT ON VIEW "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579" IS 'View of 10 waiters with highest revenue on most recent day of data.' (base.py:2260)
+2025-08-08 14:37:39,725 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ COMMENT ON COLUMN "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579"."waiter_id" IS 'Waiter ID' (base.py:2260)
+2025-08-08 14:37:39,727 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ COMMENT ON COLUMN "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579"."waiter_name" IS 'Waiter name' (base.py:2260)
+2025-08-08 14:37:39,730 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ COMMENT ON COLUMN "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579"."revenue" IS 'Waiter revenue on most recent day of data' (base.py:2260)
+2025-08-08 14:37:39,735 - MainThread - sqlmesh.core.plan.evaluator - INFO - Evaluating plan stage BackfillStage (evaluator.py:125)
+2025-08-08 14:37:39,737 - MainThread - sqlmesh.core.snapshot.evaluator - INFO - Evaluating snapshot SnapshotId<"sushi-example"."sushimoderate"."customer_segments": 2523536177> (evaluator.py:648)
+2025-08-08 14:37:39,738 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ 
+        SELECT
+            customer_id::INT AS customer_id,
+            lifetime_value::DOUBLE AS lifetime_value,
+            historical_revenue::DOUBLE AS historical_revenue,
+            active_months::INT AS active_months,
+            first_order_date,
+            last_order_date
+        FROM sushimoderate.customer_lifetime_value
+     (base.py:2260)
+2025-08-08 14:37:39,751 - MainThread - sqlmesh.core.state_sync.db.facade - INFO - Adding interval (2025-08-07 00:00:00, 2025-08-08 00:00:00) for snapshot SnapshotId<"sushi-example"."sushimoderate"."waiter_names": 2534315953> (facade.py:619)
+2025-08-08 14:37:39,751 - MainThread - sqlmesh.core.state_sync.db.interval - INFO - Pushing intervals for snapshot SnapshotId<"sushi-example"."sushimoderate"."waiter_names": 2534315953> (interval.py:213)
+2025-08-08 14:37:39,766 - MainThread - sqlmesh.core.snapshot.evaluator - INFO - Evaluating snapshot SnapshotId<"sushi-example"."sushimoderate"."top_waiters": 3549594052> (evaluator.py:648)
+2025-08-08 14:37:39,772 - MainThread - sqlmesh.core.snapshot.evaluator - INFO - Inserting batch (2023-01-01 00:00:00, 2025-08-08 00:00:00) into "sushi-example".sqlmesh__sushimoderate.sushimoderate__top_waiters__3569809579' (evaluator.py:703)
+2025-08-08 14:37:39,772 - MainThread - sqlmesh.core.snapshot.evaluator - INFO - Replacing view '"sushi-example".sqlmesh__sushimoderate.sushimoderate__top_waiters__3569809579' (evaluator.py:1933)
+2025-08-08 14:37:39,773 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ CREATE OR REPLACE VIEW "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579" ("waiter_id", "waiter_name", "revenue") AS SELECT CAST("r"."waiter_id" AS INT) AS "waiter_id", CAST("n"."name" AS TEXT) AS "waiter_name", CAST("r"."revenue" AS DOUBLE) AS "revenue" FROM "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__waiter_revenue_by_day__3677256476" AS "r" LEFT JOIN "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__waiter_names__1494776325" AS "n" ON "n"."id" = "r"."waiter_id" WHERE "r"."ds" = (SELECT MAX("waiter_revenue_by_day"."ds") AS "_col_0" FROM "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__waiter_revenue_by_day__3677256476" AS "waiter_revenue_by_day") ORDER BY "revenue" DESC LIMIT 10 (base.py:2260)
+2025-08-08 14:37:39,776 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ COMMENT ON VIEW "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579" IS 'View of 10 waiters with highest revenue on most recent day of data.' (base.py:2260)
+2025-08-08 14:37:39,778 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ COMMENT ON COLUMN "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579"."waiter_id" IS 'Waiter ID' (base.py:2260)
+2025-08-08 14:37:39,781 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ COMMENT ON COLUMN "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579"."waiter_name" IS 'Waiter name' (base.py:2260)
+2025-08-08 14:37:39,784 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ COMMENT ON COLUMN "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579"."revenue" IS 'Waiter revenue on most recent day of data' (base.py:2260)
+2025-08-08 14:37:39,787 - MainThread - sqlmesh.core.snapshot.evaluator - INFO - Auditing snapshot SnapshotId<"sushi-example"."sushimoderate"."top_waiters": 3549594052> (evaluator.py:553)
+2025-08-08 14:37:39,787 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ DESCRIBE "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579" (base.py:2260)
+2025-08-08 14:37:39,793 - MainThread - sqlmesh.core.engine_adapter.base - INFO - Executing SQL: /* SQLMESH_PLAN: 2267b8f57cdf44bc9240b427bab3b4fb */ SELECT COUNT(*) FROM (SELECT * FROM (SELECT ROW_NUMBER() OVER (PARTITION BY "waiter_id" ORDER BY "waiter_id" NULLS FIRST) AS "rank_waiter_id" FROM "sushi-example"."sqlmesh__sushimoderate"."sushimoderate__top_waiters__3569809579" AS "sushimoderate__top_waiters__3569809579" WHERE TRUE) AS "_q_0" WHERE "rank_waiter_id" > 1) AS "audit" (base.py:2260)
+2025-08-08 14:37:39,799 - MainThread - sqlmesh.core.state_sync.db.facade - INFO - Adding interval (2023-01-01 00:00:00, 2025-08-08 00:00:00) for snapshot SnapshotId<"sushi-example"."sushimoderate"."top_waiters": 3549594052> (facade.py:619)
+2025-08-08 14:37:39,799 - MainThread - sqlmesh.core.state_sync.db.interval - INFO - Pushing intervals for snapshot SnapshotId<"sushi-example"."sushimoderate"."top_waiters": 3549594052> (interval.py:213)
+2025-08-08 14:37:39,813 - MainThread - sqlmesh.core.scheduler - INFO - Execution failed for node ('"sushi-example"."sushimoderate"."customer_segments"', ((1754524800000, 1754611200000), 0)) (scheduler.py:499)
+Traceback (most recent call last):
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\model\definition.py", line 1801, in render
+    df_or_iter = env[self.entrypoint](
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 13, in execute
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\context.py", line 244, in fetchdf
+    return self.engine_adapter.fetchdf(query, quote_identifiers=quote_identifiers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\engine_adapter\base.py", line 2107, in fetchdf
+    df = self._fetch_native_df(query, quote_identifiers=quote_identifiers)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\engine_adapter\base.py", line 2083, in _fetch_native_df
+    self.execute(query, quote_identifiers=quote_identifiers)
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\engine_adapter\base.py", line 2237, in execute
+    self._execute(sql, **kwargs)
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\engine_adapter\base.py", line 2263, in _execute
+    self.cursor.execute(sql, **kwargs)
+duckdb.duckdb.BinderException: Binder Error: Referenced column "last_order_date" not found in FROM clause!
+Candidate bindings: "first_order_date", "customer_id", "active_months", "lifetime_value", "historical_revenue"
+
+LINE 8:             last_order_date
+                    ^
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\utils\concurrency.py", line 234, in sequential_apply_to_dag
+    fn(node)
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\scheduler.py", line 457, in evaluate_node
+    audit_results = self.evaluate(
+                    ^^^^^^^^^^^^^^
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\scheduler.py", line 188, in evaluate
+    wap_id = self.snapshot_evaluator.evaluate(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\snapshot\evaluator.py", line 161, in evaluate
+    result = self._evaluate_snapshot(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\snapshot\evaluator.py", line 801, in _evaluate_snapshot
+    for index, query_or_df in enumerate(queries_or_dfs):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\model\definition.py", line 1812, in render
+    raise PythonModelEvalError(format_evaluated_code_exception(e, self.python_env))
+sqlmesh.utils.errors.PythonModelEvalError:   File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\model\definition.py", line 1801, in render
+    df_or_iter = env[self.entrypoint](
+                 ^^^^^^^^^^^^^^^^^^^^^
+
+  File 'models/customer_segments.py' (or imported file), line 13, in execute
+    def execute(context: ExecutionContext, **kwargs: Any):
+        src_sql = """
+            SELECT
+                customer_id::INT AS customer_id,
+                lifetime_value::DOUBLE AS lifetime_value,
+                historical_revenue::DOUBLE AS historical_revenue,
+                active_months::INT AS active_months,
+                first_order_date,
+                last_order_date
+            FROM sushimoderate.customer_lifetime_value
+        """
+        try:
+            df = context.fetchdf(src_sql)
+    File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\context.py", line 244, in fetchdf
+    return self.engine_adapter.fetchdf(query, quote_identifiers=quote_identifiers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\engine_adapter\base.py", line 2107, in fetchdf
+    df = self._fetch_native_df(query, quote_identifiers=quote_identifiers)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\engine_adapter\base.py", line 2083, in _fetch_native_df
+    self.execute(query, quote_identifiers=quote_identifiers)
+
+    File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\engine_adapter\base.py", line 2237, in execute
+    self._execute(sql, **kwargs)
+
+    File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\engine_adapter\base.py", line 2263, in _execute
+    self.cursor.execute(sql, **kwargs)
+
+      duckdb.duckdb.BinderException: Binder Error: Referenced column "last_order_date" not found in FROM clause!
+Candidate bindings: "first_order_date", "customer_id", "active_months", "lifetime_value", "historical_revenue"
+
+LINE 8:             last_order_date
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+sqlmesh.utils.concurrency.NodeExecutionFailedError: Execution failed for node ('"sushi-example"."sushimoderate"."customer_segments"', ((1754524800000, 1754611200000), 0))
+2025-08-08 14:37:39,827 - MainThread - sqlmesh.core.context - INFO - Plan application failed. (context.py:1702)
+Traceback (most recent call last):
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\context.py", line 1694, in apply
+    self._apply(plan, circuit_breaker)
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\context.py", line 2487, in _apply
+    self._scheduler.create_plan_evaluator(self).evaluate(
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\plan\evaluator.py", line 107, in evaluate
+    self._evaluate_stages(plan_stages, plan)
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\plan\evaluator.py", line 127, in _evaluate_stages
+    handler(stage, plan)
+  File "C:\Users\andym\sushi_test\.venv\Lib\site-packages\sqlmesh\core\plan\evaluator.py", line 254, in visit_backfill_stage
+    raise PlanError("Plan application failed.")
+sqlmesh.utils.errors.PlanError: Plan application failed.
+2025-08-08 14:37:39,855 - MainThread - root - INFO - Shutting down the event dispatcher (dispatcher.py:159)
