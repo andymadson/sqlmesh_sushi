@@ -31,4 +31,3 @@ SELECT
     ELSE pc.historical_revenue * 1.5
   END AS lifetime_value
 FROM per_customer AS pc;
-

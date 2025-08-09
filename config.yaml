@@ -2,7 +2,7 @@ gateways:
     local:
         connection:
             type: duckdb
-            database: db/sushi-example.db
+            database: sushi-example.db
 
 default_gateway: local
 

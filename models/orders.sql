@@ -23,8 +23,8 @@ SELECT
     id::int, /* Order ID */
     customer_id::int, /* ID of customer placing order */
     waiter_id::int, /* ID of waiter taking order */
-    start_ts::int, /* Order start timestamp */
-    end_ts::int, /* Order end timestamp */
+    start_ts::TIMESTAMP, /* Order start timestamp */
+    end_ts::TIMESTAMP, /* Order end timestamp */
     ds::text /* Order date */
 FROM
     raw.orders
