@@ -10,7 +10,7 @@ MODEL (
   start '2023-01-01',
   grains [waiter_id, ds],
   audits (
-    NUMBER_OF_ROWS(threshold=0)
+    NUMBER_OF_ROWS_NON_BLOCKING(threshold=0)
   ),
 );
 

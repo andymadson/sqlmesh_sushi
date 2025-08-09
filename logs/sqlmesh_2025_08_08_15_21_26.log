@@ -1,5 +1,0 @@
-2025-08-08 15:21:26,795 - MainThread - sqlmesh.core.config.connection - INFO - Creating new DuckDB adapter for data files: {'db/sushi-example.db'} (connection.py:481)
-2025-08-08 15:21:27,331 - MainThread - sqlmesh.core.config.connection - INFO - Creating new DuckDB adapter for in-memory database (connection.py:483)
-2025-08-08 15:21:27,332 - MainThread - sqlmesh.core.config.connection - INFO - Creating new DuckDB adapter for in-memory database (connection.py:483)
-2025-08-08 15:21:27,414 - MainThread - sqlmesh.core.config.connection - INFO - Using existing DuckDB adapter due to overlapping data file: db/sushi-example.db (connection.py:471)
-2025-08-08 15:21:27,735 - MainThread - root - INFO - Shutting down the event dispatcher (dispatcher.py:159)
